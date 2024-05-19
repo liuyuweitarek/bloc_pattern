@@ -1,33 +1,18 @@
 name: Build Flutter Web
+
 on:
   push:
-    branches:
-      - master
+    branches: [ master ]
+
 jobs:
   build:
-    name: Build Web
-    env:
-      my_secret: ${{secrets.commit_secret}}
     runs-on: ubuntu-latest
+    permissions: 
+      contents: write
     steps:
-      - uses: actions/checkout@v2
-      - uses: subosito/flutter-action@v2
+      - uses: actions/checkout@v2 
+      - uses: subosito/flutter-action@v1
+      - uses: bluefireteam/flutter-gh-pages@v7
         with:
-          channel: stable
-          flutter-version: 3.22.0
-      - run: |
-          cd src/${{github.event.repository.name}}
-          flutter config --enable-web
-          flutter pub get
-          flutter build web --release
-      - run: |
-          cd src/${{github.event.repository.name}}/build/web
-          git init
-          git config --global user.email liuyuwei.tarek@gmail.com
-          git config --global user.name liuyuweitarek
-          git status
-          git remote add origin https://${{secrets.commit_secret}}@github.com/liuyuweitarek/bloc_pattern.git
-          git checkout gh-pages
-          git add --all
-          git commit -m "update"
-          git push origin gh-pages -f
+            workingDir: ./src/${{github.event.repository.name}}
+            baseHref: /
