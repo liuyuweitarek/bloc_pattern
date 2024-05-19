@@ -21,7 +21,7 @@ jobs:
           flutter pub get
           flutter build web --release
       - run: |
-          cd build/web
+          cd src/${{github.event.repository.name}}/build/web
           git init
           git config --global user.email liuyuwei.tarek@gmail.com
           git config --global user.name liuyuweitarek
