@@ -1,26 +1,18 @@
-# Flutter Docker Template
+# Flutter Practice: BLoC Pattern
 ## Description
-This is a Flutter project template which able to quickly create a Flutter Web App environment through docker and develop with VSCode.
+This project focuses on implementing the Business Logic Component (BLoC) pattern in a Flutter application.
 
-![docker-flutter](https://github.com/liuyuweitarek/flutter-docker-template/assets/54787524/eec8d154-0d2e-4c80-94b9-3448e21a7b6e)
+Follow the series of YouTube videos below to get started:
 
-(This image was created with the assistance of DALL·E 3)
+[The Ultimate Bloc Course](https://youtube.com/playlist?list=PLjyxas0TsCplfGRa-YNJc-t9d2qMbvcBX&si=vlQK2FUPGzyVhdrB) - By [Flutter Guys](https://www.youtube.com/@flutterguys)
 
 ## Getting Started
 
-1. Install Template
+1. Install the project
 
     ```bash
-    $ git clone https://github.com/liuyuweitarek/flutter-docker-template.git
+    $ git clone https://github.com/liuyuweitarek/bloc_pattern.git
     ```
-    
-    Replaced the project name with your own project name.
-
-    1. `ctrl + shift + f` (Windows/Linux) or `cmd + shift + f` (Mac) searching for `TODO` to find the places where you need to replace the project name.
-
-    2. Follow the formats in the TODOs.
-
-    3. After lauch the template and did the steps above, you can customize the `Description`.
 
 2. Install [Docker Desktop](https://www.docker.com/products/docker-desktop/).
 
