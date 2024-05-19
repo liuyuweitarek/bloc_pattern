@@ -10,13 +10,16 @@ jobs:
       my_secret: ${{secrets.commit_secret}}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - uses: subosito/flutter-action@v1
+      - uses: actions/checkout@v2
+      - uses: subosito/flutter-action@v2
         with:
-          channel: 'dev'
-      - run: flutter config --enable-web
-      - run: flutter pub get
-      - run: flutter build web --release
+          channel: stable
+          flutter-version: 3.22.0
+      - run: |
+          cd src/${{github.event.repository.name}}
+          flutter config --enable-web
+          flutter pub get
+          flutter build web --release
       - run: |
           cd build/web
           git init
