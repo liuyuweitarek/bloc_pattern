@@ -53,8 +53,7 @@ class CounterPage extends StatelessWidget {
                 FloatingActionButton.small(
                   tooltip: "Decrement",
                   focusColor: Colors.greenAccent.shade700,
-                  onPressed: () => _counterBloc.counterEventSink.add(DecrementEvent())
-                  ,
+                  onPressed: () => _counterBloc.counterEventSink.add(DecrementEvent()),
                   child: const Icon(Icons.remove)),
                 const SizedBox(width: 20),
                 StreamBuilder<int>(
